@@ -169,18 +169,24 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 */
 let populationTotal = 0;
-let populationArray = [];
+// let populationArray = [];
 
-zooAnimals.forEach(function(value){
-	populationArray.push(value.population);
-})
+// zooAnimals.forEach(function(value){
+// 	populationArray.push(value.population);
+// })
 
-populationTotal = populationArray.reduce(function(acc, curr){
-	return acc + curr;
-})
+// populationTotal = populationArray.reduce(function(acc, curr){
+// 	return acc + curr;
+// })
 
+// console.log(populationTotal);
+
+populationTotal = zooAnimals.reduce(function(acc, curr){ // curr gives access to each object of the array. 
+	// console.log(acc);
+	console.log(curr.population); // access to the population property of zooAnimals. 
+	return acc + curr.population; // accessing the population property of the zooAnimals. 
+}, 10)
 console.log(populationTotal);
-
 
 /* 
 
